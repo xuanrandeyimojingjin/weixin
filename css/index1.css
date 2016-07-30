@@ -424,6 +424,13 @@ img {
   margin: auto;
   bottom: 0.20rem;
   font-size: 0.35rem;
-  color: #b0b0b0;
   text-align: center;
+}
+
+.nav-bar li p a {
+  color: #b0b0b0;
+}
+
+.nav-bar li .zi {
+  color: #45c01a;
 }
