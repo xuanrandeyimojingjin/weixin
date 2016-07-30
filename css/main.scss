@@ -1,0 +1,168 @@
+@import "base";
+
+@mixin userem($size){
+    $list:800px,414px,412px,384px,375px,360px,320px;
+    @each $i in $list{
+      @media screen and (max-width:#{$i}){
+        html{
+          font-size:100px*($i/$size)
+        }
+      }
+    }
+}
+@include userem(1080px);
+//$size:640px;
+
+/*
+@media screen and (max-width:375px){
+  html{
+    //font-size: 100px*(375px/640px);
+    font-size: 58.59px;
+  }
+
+}
+@media screen and (max-width:320px){
+  html{
+    //font-size: 100px*(320px/640px);
+    font-size: 50px;
+  }
+
+}*/
+.header{
+  position: fixed;
+  width:100%;
+  height:1.43rem;
+  background: #393a3f;
+  z-index: 200;
+  top:0;
+  left:0;
+  h1{
+    font-size: 0.57rem;
+    color:#fff;
+    @include shangxia;
+    position: absolute;
+    left:0.44rem;
+    line-height: 1.43rem;
+  }
+  .search{
+    width: 0.58rem;
+    height:0.58rem;
+    @include shangxia;
+    right:2.63rem;
+    background: url(../img/search.gif) no-repeat;
+    background-size:100%;
+  }
+  .plus{
+    width:0.58rem;
+    height:0.58rem;
+    @include shangxia;
+    right:0.73rem;
+    background:url(../img/jia.png)no-repeat;
+    background-size:100%;
+  }
+}
+.content{
+  position: fixed;
+  top:1.43rem;
+  left:0;
+  bottom:0;
+  right:0;
+  width:100%;
+  overflow-y: auto;
+  background: #fff;
+  .content-inner{
+     width:100%;
+     .item{
+       width: 100%;
+        li{
+          width:100%;
+          height:1.9rem;
+          border-bottom: 0.01rem solid #ccc;
+          img{
+            display: block;
+            width:1.46rem ;
+            height:1.46rem;
+            @include shangxia;
+            left:0.42rem;
+            //background: url(../img/dyh.png) no-repeat;
+            background-size:100%;
+          }
+          .info{
+            //background: red;
+            width:7.02rem;
+            height:1.9rem;
+            float: left;
+            position: absolute;
+            left:2.25rem;
+            //line-height: 1.9rem;
+            .p1{
+              font-size: 0.44rem;
+              color:#353535;
+              font-weight: bold;
+              margin-top:0.40rem ;
+              font-family: "宋体";
+            }
+            .p2{
+              font-size: 0.37rem;
+              color:#999;
+              //margin-bottom: 0.37rem;
+              padding-top:0.20rem;
+            }
+
+          }
+          span{
+            display: block;
+            float: right;
+            padding:0.44rem;
+            color:#999;
+            font-size: 0.30rem;
+          }
+        }
+     }
+  }
+
+}
+.nav-bar{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:1.62rem;
+  background: #fff;
+  .nav-list{
+    width: 100%;
+    height:1.62rem;
+    border-top:0.01rem solid #ccc;
+    li {
+      float: left;
+      height: 100%;
+      width: 25%;
+      //background: blue;
+      //border: 1px solid black;
+      box-sizing: border-box;
+      img{
+        width:0.74rem;
+        height:0.66rem;
+        @include zuoyou;
+        top:0.22rem;
+        background: url(../img/weixin.png) no-repeat center center;
+        background-size:100%;
+      }
+      p{
+        @include zuoyou;
+        bottom:0.20rem;
+        //margin-top:0.44rem;
+        font-size: 0.35rem;
+        color:#b0b0b0;
+        text-align: center;
+
+      }
+      .zi{
+        color:#45c01a;
+      }
+    }
+
+  }
+
+}
